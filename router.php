@@ -8,9 +8,9 @@ $routes = [
     '/' => 'controllers/index.php',
     '/about' => 'controllers/about.php',
     '/notes' => 'controllers/notes.php',
+    '/note' => 'controllers/note.php',
     '/contact' => 'controllers/contact.php',
 ];
-
 
 function routeToController($url, $routes){
     if(array_key_exists($url, $routes)){
