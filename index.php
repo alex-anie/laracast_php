@@ -5,15 +5,15 @@ require 'Database.php';
 require 'Response.php';
 require 'router.php';
 
-$config = require('config.php');
+// $config = require('config.php');
 
-$db = new Database($config['database']);
+// $db = new Database($config['database']);
 
-$id = $_GET['id'];
+// $id = $_GET['id'];
 
-$query = "select * from posts where id = ?";
+// $query = "select * from posts where id = ?";
 
-$posts = $db -> query($query, [$id]) -> fetch(PDO::FETCH_ASSOC);
+// $posts = $db -> query($query, [$id]) -> fetch(PDO::FETCH_ASSOC);
 
 // connecting to our MySQL database
 
