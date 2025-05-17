@@ -1,16 +1,9 @@
 <?php
 
-$url = parse_url($_SERVER['REQUEST_URI'])['path'];
+$routes = require('routes.php');
+
 
 // Get path from URL (ignore query string)
-
-$routes = [
-    '/' => 'controllers/index.php',
-    '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/notes.php',
-    '/note' => 'controllers/note.php',
-    '/contact' => 'controllers/contact.php',
-];
 
 function routeToController($url, $routes){
     if(array_key_exists($url, $routes)){
@@ -27,6 +20,9 @@ function abort($code = 404){
 
     die();
 }
+
+$url = parse_url($_SERVER['REQUEST_URI'])['path'];
+
 
 routeToController($url, $routes);
 

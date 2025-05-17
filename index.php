@@ -17,7 +17,7 @@ require 'router.php';
 
 // connecting to our MySQL database
 
-dd($posts);
+// dd($posts);
 
 // foreach($posts as $post){
 //     echo "<li>" . $post['title'] . "</li>";
