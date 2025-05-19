@@ -2,7 +2,6 @@
 
 $routes = require('routes.php');
 
-
 // Get path from URL (ignore query string)
 
 function routeToController($url, $routes){
