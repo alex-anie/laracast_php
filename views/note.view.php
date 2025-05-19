@@ -1,4 +1,4 @@
-<?php require('partials/head.php');?>
+<?php require('partials/head.php'); ?>
 <?php require("partials/nav.php");?>
 <?php require("partials/banner.php");?>
 
@@ -8,7 +8,7 @@
                 <a href="/notes" class="text-blue-500 hover:underline">go back...</a>
             </p>
             <p>
-               <?= htmlspecialchars($note['body']) ?>
+                <?= htmlspecialchars($note['body']) ?>
             </p>
         </div>
     </main>
