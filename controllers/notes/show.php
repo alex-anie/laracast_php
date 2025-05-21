@@ -6,17 +6,34 @@
 
     $db = new Database($config['database']);
 
-    $heading = 'Note';
-    $currentUserId = 1;
+    $currentUserId = 25;
 
-    $note = $db->query('select * from notes where id = :id', [
-        'id' => $_GET['id']
-        ])-> findOrFail();
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    authorize($note['user_id'] === $currentUserId);
+         $note = $db->query('select * from notes where id = :id', [
+            'id' => $_GET['id']
+            ])-> findOrFail();
 
-    views("notes/show.view.php", [
-        'heading' => 'Note',
-        'note' => $note
-    ]);
+        authorize($note['user_id'] === $currentUserId);
 
+        // form was submitted. delete the current note:
+        $db->query('delete from notes where id = :id', [
+            'id' => $_GET['id']
+        ]);
+
+        header('location: /notes');
+        exit();
+
+    } else{
+
+        $note = $db->query('select * from notes where id = :id', [
+            'id' => $_GET['id']
+            ])-> findOrFail();
+
+        authorize($note['user_id'] === $currentUserId);
+
+        views("notes/show.view.php", [
+            'heading' => 'Note',
+            'note' => $note
+        ]);
+}
