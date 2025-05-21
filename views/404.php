@@ -5,8 +5,9 @@
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             <h1 class="test-2xl font-bold">Sorry, Page Not Found</h1>
             <p class="mt-4">
-                <a href="laracast_php/" class="test-blue underline">Go back home</a>
+                <a href="/" class="test-blue underline">Go back home</a>
             </p>
         </div>
     </main>
+    
 <?php require('partials/footer.php');?>

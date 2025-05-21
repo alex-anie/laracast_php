@@ -6,7 +6,7 @@
 
     $db = new Database($config['database']);
 
-    $currentUserId = 25;
+    $currentUserId = 1;
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
