@@ -14,4 +14,3 @@ class Validator
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 }
-
