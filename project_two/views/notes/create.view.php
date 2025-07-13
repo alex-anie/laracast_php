@@ -1,6 +1,6 @@
-    <?php require('partials/head.php'); ?>
-    <?php require('partials/nav.php'); ?>
-    <?php require('partials/banner.php'); ?>
+     <?php require base_path('views/partials/head.php'); ?>
+    <?php require base_path('views/partials/nav.php'); ?>
+    <?php require base_path('views/partials/banner.php'); ?>
 
 <main>
     <div class="max-auto max-w-7xl py-6 sm:px-6 lg:px-8">
@@ -11,9 +11,11 @@
                     <div class="col-span-full">
                     <label for="body" class="block text-sm/6 font-medium text-gray-900">Body</label>
                     <div class="mt-2">
-                        <textarea name="body" id="body" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="Here is an idea for a note..."></textarea>
+                        <textarea name="body" id="body" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" placeholder="Here is an idea for a note..."><?= $_POST['body'] ?? '' ?></textarea>
                     </div>
-                    <p class="mt-3 text-sm/6 text-gray-600">Write a few sentences about yourself.</p>
+                    <?php if(isset($errors['body'])):?>
+                        <p class="mt-3 text-sm/6 text-red-600"><?= $errors['body']?></p>
+                    <?php endif; ?>
                     </div>
                 </div>
                 </div>
@@ -26,4 +28,4 @@
     </div>
 </main>
 
-<?php require 'partials/footer.php'?>
+<?php require base_path('views/partials/footer.php');?>
