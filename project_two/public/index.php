@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use Core\Session;
+
     session_start();
     
     const BASE_PATH = __DIR__ .'/../';
@@ -12,7 +15,7 @@
     });
 
     require base_path('bootstrap.php');
-
+    
     $router = new \Core\Router();
 
     $routes = require base_path('routes.php');
@@ -23,3 +26,4 @@
 
     $router->route($url, $method);
 
+    Session::unflash();
