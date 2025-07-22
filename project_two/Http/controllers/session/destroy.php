@@ -1,6 +1,6 @@
 <?php
 
-logout();
+// logout();
 
 header('location: /');
 exit();
