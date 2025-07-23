@@ -1,0 +1,27 @@
+{
+    "name": "anie/project_two",
+    "description": "a simple php project",
+    "authors": [
+        {
+            "name": "alex-anie",
+            "email": "ocxigin@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^12.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

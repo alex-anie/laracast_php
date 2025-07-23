@@ -1,6 +1,7 @@
 <?php
 
 use Core\Session;
+require BASE_PATH . '/vendor/autoload.php';
 
     session_start();
     
@@ -8,14 +9,9 @@ use Core\Session;
 
     require BASE_PATH.'Core/functions.php';
 
-    spl_autoload_register(function($class){
-        // Core\Database
-        $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-        require base_path("{$class}.php");
-    });
 
     require base_path('bootstrap.php');
-    
+
     $router = new \Core\Router();
 
     $routes = require base_path('routes.php');

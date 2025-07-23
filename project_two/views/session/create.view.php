@@ -14,7 +14,8 @@
                     <div class="-space-y-px rounded-md shadow-sm">
                         <div>
                             <label for="email" class="sr-only">Email address</label>
-                            <input type="email" id="email" name="email" autocomplete="email" required placeholder="Email address" class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 px-4 bg-white text-gray-900">
+                            <input type="email" id="email" name="email" autocomplete="email" required placeholder="Email address" class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 px-4 bg-white text-gray-900" 
+                            value="<?= old('email')  ?>">
                         </div>
 
                         <?php if(isset($errors['email'])):?>

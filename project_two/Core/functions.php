@@ -41,3 +41,7 @@
         header("location: {$path}");
         exit();
     }
+
+    function old($key, $default = ''){
+        Core\Session::get('old')[$key] ?? $defualt;
+    }
